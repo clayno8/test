@@ -1,0 +1,59 @@
+(DEFINE-FILE-INFO :PACKAGE "UNIT-TEST" :READTABLE "XCL" :BASE 10)
+
+(IL:FILECREATED "12-Nov-2026 15:21:03" IL:|{DSK}<home>johanns>il>TEST-EXAMPLES.;6| 1505   
+
+      :EDIT-BY "johanns"
+
+      :CHANGES-TO (UTEST SQUARE-OF-4)
+                  (IL:VARS IL:TEST-EXAMPLESCOMS)
+
+      :PREVIOUS-DATE " 7-Oct-2026 17:44:01" IL:|{DSK}<home>johanns>il>TEST-EXAMPLES.;5|)
+
+
+(IL:PRETTYCOMPRINT IL:TEST-EXAMPLESCOMS)
+
+(IL:RPAQQ IL:TEST-EXAMPLESCOMS
+          ((FILE-ENVIRONMENTS IL:TEST-EXAMPLES)
+           (IL:FILES IL:TEST-FRAMEWORK)
+           (IL:P (DEFTEST ADD (+ 1 2)
+                        3)
+                 (DEFTEST MULTIPLY (* 2 3)
+                        6)
+                 (DEFTEST FACTORIAL-OF-10 (FACTORIAL 10)
+                        3628800)
+                 (DEFTEST 10DIVIDE2 (DIVIDE 10 2)
+                        5))
+           (IL:FUNCTIONS DIVIDE FACTORIAL)
+           (UTEST SQUARE-OF-4)))
+
+(DEFINE-FILE-ENVIRONMENT IL:TEST-EXAMPLES :PACKAGE "UNIT-TEST"
+   :READTABLE "xcl")
+
+(IL:FILESLOAD IL:TEST-FRAMEWORK)
+
+(DEFTEST ADD (+ 1 2)
+             3)
+
+(DEFTEST MULTIPLY (* 2 3)
+                  6)
+
+(DEFTEST FACTORIAL-OF-10 (FACTORIAL 10)
+                         3628800)
+
+(DEFTEST 10DIVIDE2 (DIVIDE 10 2)
+                   5)
+
+(DEFUN DIVIDE (A B)
+   (/ A B))
+
+(DEFUN FACTORIAL (N)
+   (COND
+      ((<= N 1)
+       1)
+      (T (* N (FACTORIAL (- N 1))))))
+
+(DEFTEST SQUARE-OF-4 (* 4 4)
+                     16)
+(IL:DECLARE\: IL:DONTCOPY
+  (IL:FILEMAP (NIL (1279 1314 (DIVIDE 1279 . 1314)) (1316 1417 (FACTORIAL 1316 . 1417)))))
+IL:STOP
