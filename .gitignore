@@ -36,3 +36,6 @@ core
 
 # Mac OS detritus
 .DS_Store
+
+# Windows download mark
+*Zone.Identifier
